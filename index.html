@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вареники Варварка - вкусненько и жарко!</title>
+    <meta name="description" content="Натуральные домашние вареники ручной работы. Вкусненько и жарко - вареники Варварка! Доставка по всей России.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background-color: #fff5f5;
+            color: #5a3e36;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffe66d;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://example.com/vareniki-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .slogan {
+            color: #ffe66d;
+            font-style: italic;
+            font-size: 28px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffe66d;
+            color: #5a3e36;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: #ffd166;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #ff6b6b;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: #ff6b6b;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .about {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            background-color: #f8d7da;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .product-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #5a3e36;
+        }
+        
+        .product-desc {
+            margin-bottom: 15px;
+            color: #7a6a65;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .advantages {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .advantage-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #5a3e36;
+        }
+        
+        .advantage-icon {
+            font-size: 50px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        
+        .advantage-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .reviews {
+            background-color: #fff5f5;
+        }
+        
+        .review-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f8d7da;
+            margin-right: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .review-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .review-date {
+            color: #7a6a65;
+            font-size: 14px;
+        }
+        
+        .review-text {
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #5a3e36;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #f8d7da;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: #5a3e36;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffe66d;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #f8d7da;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffe66d;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #f8d7da;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #ffe66d;
+            color: #5a3e36;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #f8d7da;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Вареники Варварка">
+                    Варварка
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#products">Наши вареники</a></li>
+                        <li><a href="#advantages">Почему мы</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Домашние вареники ручной работы</h1>
+            <p class="slogan">Вкусненько и жарко - вареники Варварка!</p>
+            <a href="#products" class="btn">Выбрать вареники</a>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">О нашем производстве</h2>
+            <div class="about">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Мы - семейное производство вареников "Варварка", работаем с 2010 года и сохраняем традиции домашней кухни.</p>
+                        <p>Все наши вареники изготавливаются вручную из натуральных ингредиентов без консервантов и искусственных добавок.</p>
+                        <p>Мы тщательно отбираем поставщиков и контролируем каждый этап производства, чтобы вы могли наслаждаться по-настоящему домашним вкусом.</p>
+                    </div>
+                    <div class="about-img">
+                        <img src="production.jpg" alt="Производство вареников Варварка">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="products" class="section" style="background-color: #fff5f5;">
+        <div class="container">
+            <h2 class="section-title">Наши вареники</h2>
+            <div class="products">
+                <!-- Вареники 1 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('vareniki1.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">С творогом</h3>
+                        <p class="product-desc">Нежные вареники с домашним творогом, сметаной и зеленью</p>
+                        <span class="product-price">350 руб./кг</span>
+                        <a href="#contacts" class="btn" style="padding: 10px 25px; font-size: 16px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Вареники 2 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('vareniki2.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">С картошкой и грибами</h3>
+                        <p class="product-desc">Сытные вареники с картофельным пюре и лесными грибами</p>
+                        <span class="product-price">380 руб./кг</span>
+                        <a href="#contacts" class="btn" style="padding: 10px 25px; font-size: 16px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Вареники 3 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('vareniki3.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">С вишней</h3>
+                        <p class="product-desc">Сладкие вареники с сочной вишней и сахарной пудрой</p>
+                        <span class="product-price">400 руб./кг</span>
+                        <a href="#contacts" class="btn" style="padding: 10px 25px; font-size: 16px;">Заказать</a>
+                    </div>
+                </div>
+                
+                <!-- Вареники 4 -->
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('vareniki4.jpg');"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">С мясом</h3>
+                        <p class="product-desc">Ароматные вареники с нежным фаршем из говядины и свинины</p>
+                        <span class="product-price">420 руб./кг</span>
+                        <a href="#contacts" class="btn" style="padding: 10px 25px; font-size: 16px;">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="advantages" class="section advantages">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">👩‍🍳</div>
+                    <h3 class="advantage-title">Ручная лепка</h3>
+                    <p>Каждый вареник лепится вручную с любовью и заботой, как дома</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🌱</div>
+                    <h3 class="advantage-title">Натуральные ингредиенты</h3>
+                    <p>Только свежие продукты от проверенных поставщиков</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🚚</div>
+                    <h3 class="advantage-title">Быстрая доставка</h3>
+                    <p>Доставляем заказы в день производства</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏆</div>
+                    <h3 class="advantage-title">Проверенное качество</h3>
+                    <p>Более 10 лет радуем наших клиентов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="reviews" class="section reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar" style="background-image: url('client1.jpg');"></div>
+                    <div>
+                        <div class="review-name">Ирина Петрова</div>
+                        <div class="review-date">15 мая 2023</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Заказывали вареники с творогом для семейного ужина - просто объедение! На вкус как будто бабушка приготовила. Тесто нежное, творог свежий, не кислый. Порции большие, хватило на всю семью. Обязательно закажем ещё!"
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar" style="background-image: url('client2.jpg');"></div>
+                    <div>
+                        <div class="review-name">Дмитрий Смирнов</div>
+                        <div class="review-date">2 июня 2023</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Попробовал вареники с картошкой и грибами - вкус детства! Грибы настоящие, лесные, картошка с луком - просто пальчики оближешь. Доставили вовремя, упаковано аккуратно. Рекомендую всем, кто ценит домашний вкус!"
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacts" class="section">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product">Интересующий продукт</label>
+                        <select id="product">
+                            <option value="tvorog">Вареники с творогом</option>
+                            <option value="potato">Вареники с картошкой и грибами</option>
+                            <option value="cherry">Вареники с вишней</option>
+                            <option value="meat">Вареники с мясом</option>
+                            <option value="all">Все виды</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Ваш вопрос или комментарий</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О Варварке</h3>
+                    <p>Производство домашних вареников ручной работы в Санкт-Петербурге. Работаем с 2010 года.</p>
+                    <div class="social-links">
+                        <a href="#">VK</a>
+                        <a href="#">TG</a>
+                        <a href="#">WA</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Санкт-Петербург, ул. Вареничная, 15</li>
+                        <li>Телефон: +7 (967) 564-30-27</li>
+                        <li>Email: mchlsmirnoff@gmail.com</li>
+                        <li>Режим работы: круглосуточно</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Меню</h3>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#products">Наши вареники</a></li>
+                        <li><a href="#advantages">Почему мы</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Доставка</h3>
+                    <ul>
+                        <li>По Санкт-Петербургу - 200 руб.</li>
+                        <li>При заказе от 2000 руб. - бесплатно</li>
+                        <li>Доставка в день заказа</li>
+                        <li>Возможен самовывоз</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Вареники Варварка. Все права защищены.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
